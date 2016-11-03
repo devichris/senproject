@@ -379,13 +379,13 @@ NSHORT_TABLE
 			MOVWF	PCL
 			
 HMSG
-			DT	" Running setting 1 with a duty cycle of 0 percent"
+			DT	" Running setting 1 with a duty cycle of 0  percent"
 			DT	0X00
 			RETLW	0X00
 
 OSHORT_TABLE
 			
-			BTFSS	CONT1,0X1
+			BTFSC	CONT1,0X1
 			RETURN
 			
 			MOVWF	CONT				;SAVE OFFSET
@@ -398,12 +398,12 @@ OSHORT_TABLE
 			MOVWF	PCL
 			
 MMSG
-			DT	" Running setting 2 with a duty cycle of 30 percent"
+			DT	" Running setting 2 with a duty cycle of  30 percent"
 			DT	0X00
 			RETLW	0X00
 TSHORT_TABLE
 			
-			BTFSC	CONT1,0X1
+			BTFSS	CONT1,0X1
 			RETURN
 
 			MOVWF	CONT				;SAVE OFFSET
@@ -416,7 +416,7 @@ TSHORT_TABLE
 			MOVWF	PCL
 			
 LMSG
-			DT	" Running setting 3 with a duty cycle of 70 percent"
+			DT	" Running setting 3 with a duty cycle of  70 percent"
 			DT	0X00
 			RETLW	0X00
 THSHORT_TABLE
@@ -434,7 +434,7 @@ THSHORT_TABLE
 			MOVWF	PCL
 			
 MSG
-			DT	" Running setting 4 with a duty cycle of 90 percent"
+			DT	" Running setting 4 with a duty cycle of  90 percent"
 			DT	0X00
 			RETLW	0X00
 
@@ -479,7 +479,7 @@ BIT5
 
 DELAY10									;TIME DELAY
 		
-			MOVLW	0X50
+			MOVLW	0X61
 			MOVWF	VAR2
 LOOP23			MOVLW	0X00
 
